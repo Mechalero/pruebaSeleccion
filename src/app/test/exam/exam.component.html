@@ -1,0 +1,364 @@
+<app-nav></app-nav>
+<div id="wrapper" *ngIf="user.estado != 'done' " >
+	<div id="content-wrapper">
+	    <div class="container">
+	      <!-- Breadcrumbs-->
+	      <ol class="breadcrumb">
+	        <li class="breadcrumb-item">
+	          <a href="#">Prueba Técnica Nombre {{user?.nombres}}</a>
+	        </li>
+	        <!-- <li class="breadcrumb-item active">Tables</li> -->
+	      </ol>
+	      <div class="my-3 p-3 bg-white rounded shadow-sm">
+          	<h2 class="pb-5 mb-0 text-center">Prueba técnica  de ingreso de analista funcional</h2>
+	          <form>
+				<div class="form-group">
+					<h6>Las preguntas del 1 al 7 son de selección única</h6>
+			    	<label for="text">{{exam1[0].numero}}. De los siguientes objetivos:
+			    		<ol>
+			    			<li> Encontrar defectos.</li>
+			    			<li> Ganar confianza en el sistema.</li>
+			    			<li> Proporcionar información sobre el sistema</li>
+			    			<li> Prevenir defectos</li>
+			    			<li> Eliminar defectos</li>
+			    		</ol>
+			    	</label>
+				    <p for="text">¿	Cuáles son objetivos comunes de las pruebas?</p>
+				    <div class="form-check px-5	">
+					  <input class="form-check-input" type="radio" name="q1" id="q1a" value="a" [(ngModel)]="exam1[0].respuesta" >
+					  <label class="form-check-label" for="q1a">
+					    a) 1,2,3,4 y 5
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q1" id="q1b" value="b" [(ngModel)]="exam1[1].respuesta">
+					  <label class="form-check-label" for="q1b">
+					    b) 1,2 y 4
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q1" id="q1c" value="c" [(ngModel)]="exam1[1].respuesta">
+					  <label class="form-check-label" for="q1c">
+					    c) 1,2,3 y 4
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q1" id="q1d" value="d" [(ngModel)]="exam1[1].respuesta">
+					  <label class="form-check-label" for="q1d">
+					    d) 1 y 4
+					  </label>
+					</div>
+		  		</div>
+			    <div class="form-group">
+				    <label for="exampleInputPassword1">{{exam1[1].numero}}. ¿Cuáles actividades están presentes en las pruebas?</label>
+				    <div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q2" id="q2" [(ngModel)]="exam1[1].respuesta" value="a" >
+					  <label class="form-check-label" for="defaultCheck1">
+					    a) Las actividades al final del ciclo de vida de las pruebas
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q2" id="q2" [(ngModel)]="exam1[1].respuesta" value="b" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    b) Solo las atividades que evalúan los productos del software
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q2" id="q2" [(ngModel)]="exam1[1].respuesta" value="c" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    c) Las actividades que involucran la ejecución de una prueba por el componente o sistema sometido a pruebas
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q2" id="q2" [(ngModel)]="exam1[1].respuesta" value="d" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    d) las actividades a través de todo el ciclo de vida del software, incluyendo la planificación, preparación y evaluación
+					  </label>
+					</div>
+			  	</div>
+				<div class="form-group">
+				    <label for="exampleInputPassword1">{{exam1[2].numero}}. ¿Las pruebas exhautivas involucran?</label>
+				    <div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q3" id="q3a" [(ngModel)]="exam1[2].respuesta" value="a" >
+					  <label class="form-check-label" for="defaultCheck1">
+					    Todos los pares de valores de entrada y las precondiciones
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q3" id="q3b" [(ngModel)]="exam1[2].respuesta" value="b" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    Por lo menos uno de cada valor posible de las entradas y precondiciones
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q3" id="q3c" [(ngModel)]="exam1[2].respuesta" value="c" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    Todas las combinaciones de los valores de entrada y las precondiciones
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q3" id="q3d" [(ngModel)]="exam1[2].respuesta" value="d" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    las actividades a través de todo el ciclo de vida del software, incluyendo la planificación, preparación y evaluación
+					  </label>
+					</div>
+				</div>
+				<div class="form-group ">
+				    <label for="exampleInputPassword1">{{exam1[3].numero}}. ¿Es una actividad de la etapa de planificación?</label>
+				    <div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q4" id="q4a" [(ngModel)]="exam1[3].respuesta" value="a" >
+					  <label class="form-check-label" for="defaultCheck1">
+					   a) Medir y analizar los resultados
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q4" id="q4b" [(ngModel)]="exam1[3].respuesta" value="b" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    b) Determinar los criterios de salida
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q4" id="q4c" [(ngModel)]="exam1[3].respuesta" value="c" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    c) Revisar las bases de las pruebas
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q4" id="q4d" [(ngModel)]="exam1[3].respuesta" value="d" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    d) Comprobar los registros de las pruebas contra los criterios de salida.
+					  </label>
+					</div>
+				</div>
+				<div class="form-group ">
+				    <label for="exampleInputPassword1">{{exam1[4].numero}}. ¿Las pruebas pueden?</label>
+				    <div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q5" id="q5a" [(ngModel)]="exam1[4].respuesta" value="a" >
+					  <label class="form-check-label" for="defaultCheck1">
+					    a) Medir la calidad del Software según los defectos encontrados
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q5" id="q5b" [(ngModel)]="exam1[4].respuesta" value="b" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    b) Eliminar la posibilidad de que no hay defectos descubiertos
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q5" id="q5c" [(ngModel)]="exam1[4].respuesta" value="c" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    b) Encontrar nuevos defectos a través de la repetición de las mismas pruebas
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q5" id="q5d" [(ngModel)]="exam1[4].respuesta" value="d" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    d) Encontrar, analizar y eliminar las causas de las fallas
+					  </label>
+					</div>
+				</div>
+				<div class="form-group ">
+				    <label for="exampleInputPassword1">{{exam1[5].numero}}. ¿Un sistema de calidad es?</label>
+				    <div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q6" id="q6a" [(ngModel)]="exam1[5].respuesta" value="a" >
+					  <label class="form-check-label" for="defaultCheck1">
+					    a) Seguro
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q6" id="q6b" [(ngModel)]="exam1[5].respuesta" value="b" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    b) Sastiface los resultados requisitos especficados, las necesidades y la expectativa de cliente y los usuarios
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q6" id="q6c" [(ngModel)]="exam1[5].respuesta" value="c" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    c) Cuesta más que otros sistemas con las mismas características
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q6" id="q6d" [(ngModel)]="exam1[5].respuesta" value="d" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    d) Fue entregado a tiempo y dentro del presupuesto
+					  </label>
+					</div>
+				</div>
+				<div class="form-group ">
+				    <label for="exampleInputPassword1">{{exam1[6].numero}}. ¿Cuál de los siguientes es un objetivo de las pruebas?</label>
+				    <div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q7" id="q7a" [(ngModel)]="exam1[6].respuesta" value="a" >
+					  <label class="form-check-label" for="defaultCheck1">
+					    a) Seguro
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q7" id="q7b" [(ngModel)]="exam1[6].respuesta" value="b" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    b) Sastiface los resultados requisitos especficados, las necesidades y la expectativa de cliente y los usuarios
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q7" id="q7c" [(ngModel)]="exam1[6].respuesta" value="c" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    c) Cuesta más que otros sistemas con las mismas características
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q7" id="q7d" [(ngModel)]="exam1[6].respuesta" value="d" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    d) Fue entregado a tiempo y dentro del presupuesto
+					  </label>
+					</div>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[7].numero}}. Escriba las estapas del proceso de pruebas</label>
+				    <textarea class="form-control" id="q8" [(ngModel)]="exam1[7].respuesta" rows="5" name="q8"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[8].numero}}. Describir las etapas del proceso de pruebas del punto anterior</label>
+				    <textarea class="form-control" name="q9" id="q9" [(ngModel)]="exam1[8].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[9].numero}}. Escriba 3 tipos de pruebas de Software</label>
+				    <textarea class="form-control" name="q10" id="q10"  [(ngModel)]="exam1[9].respuesta"rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[10].numero}}. Describa las pruebas del Software del punto anterior</label>
+				    <textarea class="form-control"  name="q11" id="q11" [(ngModel)]="exam1[10].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[11].numero}}. ¿Cuál de las siguientes sentencias crean una tabla?</label>
+				    <div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q12" id="q12a" [(ngModel)]="exam1[11].respuesta" value="a" >
+					  <label class="form-check-label" for="defaultCheck1">
+					    a) SELECT * FROM TABLE
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q12" id="q12b" [(ngModel)]="exam1[11].respuesta" value="b" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    b) CREATE TABLE
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q12" id="q12c" [(ngModel)]="exam1[11].respuesta" value="c" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    c) SELECT MAX(CAMPO) FROM TABLE
+					  </label>
+					</div>
+					<div class="form-check px-5">
+					  <input class="form-check-input" type="radio" name="q12" id="q12d" [(ngModel)]="exam1[11].respuesta" value="d" >
+					  <label class="form-check-label" for="defaultCheck2">
+					    d) SELECT COUNT(*) FROM MULTAS
+					  </label>
+					</div>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[12].numero}}. Escribir una sentencia SQL que cree la base de datos "COLEGIO"</label>
+				    <textarea class="form-control" name="q13" id="q13" [(ngModel)]="exam1[12].respuesta" rows="3"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[13].numero}}. Escribir una sentencia SQL que cree una tabla "ALUMNOS" en la base de datos anterior, con los campos (NOMBRE, APELLIDO, CEDULA, TELEFONO)</label>
+				    <textarea class="form-control" name="q14" id="q14" [(ngModel)]="exam1[13].respuesta" rows="3"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[14].numero}}. Escribir una sentencia SQL para ingresar la información de 5 alumnos en la tabla anterior</label>
+				    <textarea class="form-control" name="q15" id="q15" [(ngModel)]="exam1[14].respuesta" rows="3"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[15].numero}}. Escribir una sentencia que elimine la tabla "ALUMNOS"</label>
+				    <textarea class="form-control" name="q16" id="q16" [(ngModel)]="exam1[15].respuesta" rows="3"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[16].numero}}. Escribir una sentencia que elimine la base de datos "COLEGIO"</label>
+				    <textarea class="form-control" name="q17" id="q17" [(ngModel)]="exam1[16].respuesta" rows="3"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[17].numero}}. Se tiene el siguiente formulario
+				    	<img  style="width: 100%;padding: 10px;" src="assets/img/18.png">
+				    	Realizar una estimación de tiempos de las etapas más importantes para el proceso de pruebas sobre este formulario
+				    </label>
+				    <textarea class="form-control" name="q18"id="q18" [(ngModel)]="exam1[17].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[18].numero}}. Realizar 5 casos de pruebas referentes al formulario anterior</label>
+				    <textarea class="form-control" name="q19" id="q19" [(ngModel)]="exam1[18].respuesta" rows="3"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[19].numero}}. Realizar un informe parcial para el cliente sobre el resultado de los 5 casos de prueba anteriormente creados</label>
+				    <textarea class="form-control" name="q20" id="q20" [(ngModel)]="exam1[19].respuesta"  rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[20].numero}}. ¿Qué son las pruebas no funcionales?</label>
+				    <textarea class="form-control" name="q21" id="q21" [(ngModel)]="exam1[20].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[21].numero}}. ¿Qué aspectos se analizan en las pruebas no funcionales?</label>
+				    <textarea class="form-control" name="q22" id="q22" [(ngModel)]="exam1[21].respuesta" rows="5"></textarea>
+				</div> 
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[22].numero}}. Para usted ¿Qué significa metodología de pruebas?</label>
+				    <textarea class="form-control" name="q23" id="q23" [(ngModel)]="exam1[22].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[23].numero}}. Describa las fases de metodología de pruebas</label>
+				    <textarea class="form-control" name="q24" id="q24" [(ngModel)]="exam1[23].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[24].numero}}. ¿Por qué cree que es necesaria la metodología de pruebas?</label>
+				    <textarea class="form-control" name="q25" id="q25" [(ngModel)]="exam1[24].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[25].numero}}. ¿Qué es calidad?</label>
+				    <textarea class="form-control" name="q26" id="q26" [(ngModel)]="exam1[25].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[26].numero}}. ¿Qué es aseguramiento de la calidad?</label>
+				    <textarea class="form-control" name="q27" id="q27" [(ngModel)]="exam1[26].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[27].numero}}. ¿Qué técnicas de pruebas conoce?</label>
+				    <textarea class="form-control" name="q28" id="q28" [(ngModel)]="exam1[27].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[28].numero}}. ¿Qué aspectos debe tener en cuenta en una esimación de tiempos?</label>
+				    <textarea class="form-control" name="q29" id="q29" [(ngModel)]="exam1[28].respuesta" rows="5"></textarea>
+				</div>
+				<div class="form-group">
+				    <label for="exampleFormControlInput1">{{exam1[29].numero}}. ¿Qué es una estrategia de pruebas? y ¿Cuál es la diferencia con un plan de pruebas?</label>
+				    <textarea class="form-control" name="q30" id="q30" [(ngModel)]="exam1[29].respuesta" rows="5"></textarea>
+				</div>
+			 	<button class="btn btn-primary" href="#" data-toggle="modal" data-target="#confirmation">ENVIAR</button>
+			  </form>
+      	  </div>
+	    </div>
+    </div>
+</div>
+<div id="wrapper" *ngIf="user.estado == 'done'" >
+	<div id="content-wrapper">
+	    <div class="container text-center">
+	    	<img style="margin-top: 10%;" src="/assets/css/fontawesome-free/svgs/regular/check-circle.svg" width="200px" height="200px">
+	    	<h1>¡Prueba Realizada!</h1>
+	    </div>
+	</div>
+</div>
+
+<!-- Logout Modal-->
+    <div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="exe" aria-hidden="false">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exe">Confirmación</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">¿Está seguro de enviar la prueba?</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <button class="btn btn-primary" (click)="add()">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>

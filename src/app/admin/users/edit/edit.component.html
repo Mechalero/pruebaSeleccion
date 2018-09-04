@@ -1,0 +1,83 @@
+ <div class="container">
+  <div class="card card-register mx-auto mt-5">
+    <div class="card-header">Prueba Ténica de ingreso Analista funcional</div>
+    <div class="card-body">
+        <div class="form-group">
+          <div class="form-label-group">
+            <input type="text" id="inputEmail" readonly class="form-control" value="{{user.nombres+' '+user.apellidos}}">
+            <label for="inputEmail">Nombres</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="text" id="firstName" readonly class="form-control" value="{{user.tipoDoc}}" >
+                <label for="firstName">Tipo de doucmento</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="text" id="lastName" readonly class="form-control" value="{{user.documento}}">
+                <label for="lastName">Documento</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-label-group">
+            <input type="text" id="inputEmail" readonly class="form-control" value="{{user.create | date:'medium'}}">
+            <label for="inputEmail">Fecha</label>
+            <!-- <p id="inputEmail">{{user.create}}</p> -->
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h4 class="pb-5 mb-0 text-center">Preguntas</h4>
+    <button type="button" class="btn btn-primary float-right" (click)="download()">Descargar</button>
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Respuesta</th>
+            <!-- <th>Correcta</th> -->
+            <th>Calificación</th>
+            <th>Calificar</th>               
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of user.preguntas; index as i">
+            <td>{{u.numero}}</td>
+            <td>{{u.respuesta}}</td>
+            <!-- <td>{{u.correta}}</td> -->
+            <td >
+              <div *ngIf="u.correta != '' || u.nota !='';else elseBlock">
+                <div *ngIf="u.correta == u.respuesta || u.nota == 'good';else eBlock">
+                  <i class="text-success fas fa-check" ></i>
+                </div>
+                <ng-template #eBlock><i class=" text-danger fas fa-times"></i></ng-template>
+              </div>
+              <ng-template #elseBlock>
+                No calificado
+              </ng-template>
+            </td>
+            <td>
+              <div class="dropdown" *ngIf="u.nota == '' && u.estado == '2' ">
+                <button class="btn btn-secondary dropdown-toggle" href="#" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Calificar
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" (click)="addNota('good',i)" ><i class="text-success fas fa-check"></i> Bien</a>
+                  <a class="dropdown-item" (click)="addNota('bad',i)"><i class=" text-danger fas fa-times"></i> Mala</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

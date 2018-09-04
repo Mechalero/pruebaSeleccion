@@ -23,9 +23,20 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./src/assets/css/sb-admin.css",
+              "./src/assets/css/fontawesome-free/css/all.min.css",
+              /*"./src/assets/css/font-awesome.min.css",
+              "./src/assets/css/font.css",
+              "./src/assets/css/app.css",
+              "./src/assets/css/admin.css",*/
+              // "src/assets/scss/main.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [ 
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {

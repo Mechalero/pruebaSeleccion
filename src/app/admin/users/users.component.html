@@ -1,0 +1,104 @@
+<div id="content-wrapper">
+    <div class="container-fluid">
+<!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Tables</li>
+          </ol>
+<!-- DataTables Example -->
+          <div class="p-3" *ngIf="alert.status" [ngClass]="alert.class">
+            {{alert.message}}
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Lista de usuarios
+              <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Crear Usuario</button>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Fecha de ingreso</th>
+                      <th>Nombre</th>
+                      <th>Documento</th>
+                      <th>tipo de documento</th>
+                      <th>-</th>                
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let u of users">
+                      <td>{{u.create | date}}</td>
+                      <td>{{u.nombres+' '+u.apellidos}}</td>
+                      <td>{{u.documento}}</td>
+                      <td>{{u.tipoDoc}}</td>
+                      <td><a type="button" class="btn btn-success" href="rrhh-admin/user/{{u._id}}">Detalles</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated {{date | date: 'medium'}}</div>
+          </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+              <div class="form-label-group">
+                  <input type="text" name="nombres" class="form-control" [(ngModel)]="user.nombres"  required autofocus="autofocus" >
+                  <label for="firstName">Nombres</label>
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" name="Apellidos" class="form-control"  [(ngModel)]="user.apellidos" required autofocus="autofocus">
+                  <label for="Apellidos">Apellidos</label>
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <select class="form-control form-control-lg" id="inputS" [(ngModel)]="user.tipoDoc" name="tipoDoc" >
+                      <option value="1" disabled="">Tipo de documento</option>
+                      <option value="C.C">Cédula de Ciudadanía</option>
+                      <option value="C.E">Cédula de Extranjería</option>
+                      <option value="NIT ">NIT</option>
+                    </select>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input type="text" name="documento" class="form-control" [(ngModel)]="user.documento" required autofocus="autofocus">
+                    <label for="inputEmail">Documento</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="p-3" *ngIf="alert.status" [ngClass]="alert.class">
+          {{alert.message}}
+        </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="addUser()">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
