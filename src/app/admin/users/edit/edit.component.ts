@@ -42,7 +42,14 @@ export class EditComponent implements OnInit {
     let link:any;
     this.apiservice.download(this.user._id).subscribe(l =>{
       link= l;
-      location.href= "api-v1/"+link.link;
+      console.log(link.link)
+      var a = document.createElement('a');
+      // a.href="http://localhost:5000/"+link.link;
+      a.href = "http://localhost:5000/download/datos.csv"
+      a.setAttribute("download", "download");
+      document.body.appendChild(a);
+      a.click();
+      // location.href= "localhost:5000/api-v1/"+link.link;
     })
   }
 

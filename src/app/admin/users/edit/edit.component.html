@@ -35,8 +35,12 @@
   </div>
 
   <div class="my-3 p-3 bg-white rounded shadow-sm">
-    <h4 class="pb-5 mb-0 text-center">Preguntas</h4>
-    <button type="button" class="btn btn-primary float-right" (click)="download()">Descargar</button>
+    <div class="pb-3 mb-0 float-left">
+      <h4 class=" text-center">Preguntas</h4>
+    </div>
+    <div class="pb-3 mb-0 float-right">
+      <button type="button" class="btn btn-light" (click)="download()"><i class="fas fa-download"></i> Descargar</button>
+    </div>
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>

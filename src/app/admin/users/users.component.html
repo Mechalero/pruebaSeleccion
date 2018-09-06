@@ -55,17 +55,17 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form #f="ngForm" name="form" novalidate >
       <div class="modal-body">
-        <form>
             <div class="form-group">
               <div class="form-label-group">
-                  <input type="text" name="nombres" class="form-control" [(ngModel)]="user.nombres"  required autofocus="autofocus" >
+                  <input type="text" name="nombres" class="form-control" [(ngModel)]="user.nombres" [ngClass]="{'is-invalid':f.submitted && nombres.invalid}" #nombres="ngModel" required>
                   <label for="firstName">Nombres</label>
               </div>
             </div>
             <div class="form-group">
                 <div class="form-label-group">
-                  <input type="text" name="Apellidos" class="form-control"  [(ngModel)]="user.apellidos" required autofocus="autofocus">
+                  <input type="text" name="apellidos" class="form-control"  [(ngModel)]="user.apellidos" [ngClass]="{'is-invalid':f.submitted && apellidos.invalid}" #apellidos="ngModel" required >
                   <label for="Apellidos">Apellidos</label>
                 </div>
             </div>
@@ -73,32 +73,32 @@
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <select class="form-control form-control-lg" id="inputS" [(ngModel)]="user.tipoDoc" name="tipoDoc" >
-                      <option value="1" disabled="">Tipo de documento</option>
+                    <select class="form-control" [(ngModel)]="user.tipoDoc" name="tipodoc"  #tipodoc="ngModel" [ngClass]="{'is-invalid': f.submitted && tipodoc.invalid}" required>
+                      <option value="" disabled="">Tipo de documento</option>
                       <option value="C.C">Cédula de Ciudadanía</option>
                       <option value="C.E">Cédula de Extranjería</option>
                       <option value="NIT ">NIT</option>
                     </select>
-                    
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="text" name="documento" class="form-control" [(ngModel)]="user.documento" required autofocus="autofocus">
+                    <input type="text" name="documento" class="form-control" [(ngModel)]="user.documento" [ngClass]="{'is-invalid': f.submitted && documento.invalid}" #documento="ngModel" required>
                     <label for="inputEmail">Documento</label>
                   </div>
                 </div>
               </div>
             </div>
-        </form>
+        
       </div>
       <div class="modal-footer">
         <div class="p-3" *ngIf="alert.status" [ngClass]="alert.class">
           {{alert.message}}
         </div>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" (click)="addUser()">Register</button>
+        <button type="submit" class="btn btn-primary" (click)="addUser()">Register</button>
       </div>
+      </form>
     </div>
   </div>
 </div>

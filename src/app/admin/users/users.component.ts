@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
   		private apiService: ApiService
   	) { 
       this.user = new Users();
-      this.user.tipoDoc = "1";
+      this.user.tipoDoc = "";
       this.alert = {status :false , message:'', class:''};
       this.date = new Date();
     }
@@ -40,12 +40,12 @@ export class UsersComponent implements OnInit {
         );
   	}
     addUser(){
-      this.apiService.addUser(this.user).subscribe(user => {
-        this.users.push(this.user);
-        this.alert = {status :true , message:'Usuario nuevo fue creado', class:'alert alert-success'};
-        $('#exampleModal').modal('hide');
-      },error =>{
-        this.alert = {status :true , message:'Usuario nuevo no fue creado', class:'alert alert-danger'};
-      });
+      // this.apiService.addUser(this.user).subscribe(user => {
+      //   this.users.push(this.user);
+      //   this.alert = {status :true , message:'Usuario nuevo fue creado', class:'alert alert-success'};
+      //   $('#exampleModal').modal('hide');
+      // },error =>{
+      //   this.alert = {status :true , message:'Usuario nuevo no fue creado', class:'alert alert-danger'};
+      // });
     }
 }

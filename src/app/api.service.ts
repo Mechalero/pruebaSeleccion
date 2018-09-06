@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ApiService {
-	private apiUrl = 'http://localhost:5000/api-v1/';
+	private apiUrl = '/api-v1/';
   	constructor(
   		private http: HttpClient
   	) { }
