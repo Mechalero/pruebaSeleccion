@@ -1,7 +1,7 @@
 export class Answer {
+	texto?:String;
 	numero:number;
-	respuesta: String;
-	estado: String;
-	nota:String;
-	correta:String;
+	tipo:String;
+	opciones?:[String];
+	puntos?:Number;
 }

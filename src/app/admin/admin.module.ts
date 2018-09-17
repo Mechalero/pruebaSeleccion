@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { EditComponent } from './users/edit/edit.component';
 import { AddComponent } from './users/add/add.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { AddComponent } from './users/add/add.component';
   	UsersComponent,
   	EditComponent,
   	AddComponent,
+  	LoginComponent,
   ],
   providers: [],
   bootstrap: [AdminComponent]

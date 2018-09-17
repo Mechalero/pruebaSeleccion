@@ -30,7 +30,10 @@ export class UsersComponent implements OnInit {
     }
 
   	ngOnInit() {
-  		this.apiService.getUsers().subscribe(
+  		this.load();
+  	}
+    load(){
+      this.apiService.getUsers().subscribe(
         users => {
             this.users = users;
             this.alert = {status :false , message:'', class:''};
@@ -38,14 +41,16 @@ export class UsersComponent implements OnInit {
             this.alert = {status :true , message:'No se pudo obtener los usuarios de la API', class:'alert alert-warning'};
           }
         );
-  	}
-    addUser(){
-      // this.apiService.addUser(this.user).subscribe(user => {
-      //   this.users.push(this.user);
-      //   this.alert = {status :true , message:'Usuario nuevo fue creado', class:'alert alert-success'};
-      //   $('#exampleModal').modal('hide');
-      // },error =>{
-      //   this.alert = {status :true , message:'Usuario nuevo no fue creado', class:'alert alert-danger'};
-      // });
+    }
+    addUser(valid){
+      if(valid){
+        this.apiService.addUser(this.user).subscribe(user => {
+          this.load();
+          this.alert = {status :true , message:'Usuario nuevo fue creado', class:'alert alert-success'};
+          $('#exampleModal').modal('hide');
+        },error =>{
+          this.alert = {status :true , message:'Usuario nuevo no fue creado', class:'alert alert-danger'};
+        });
+      }
     }
 }

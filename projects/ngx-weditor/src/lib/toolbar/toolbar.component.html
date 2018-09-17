@@ -1,0 +1,30 @@
+<div class="toolbar">
+  <div class="btn-toolbar" role="toolbar">
+
+    <!-- Heading and text -->
+    <div class="btn-group">
+      <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Quote/unquote selection or paragraph" (click)="applyStyle({ key: 'formatBlock', value: 'blockquote' })"><i class="fa fa-quote-right"></i></button>
+    </div>
+
+    <!-- Formatting -->
+    <div class="btn-group">
+        <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Bold" (click)="applyStyle({ key: 'bold' })"><i class="fa fa-bold"></i></button>
+        <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Italic" (click)="applyStyle({ key: 'italic' })"><i class="fa fa-italic"></i></button>
+        <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Underline" (click)="applyStyle({ key: 'underline' })"><i class="fa fa-underline"></i></button>
+        <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Strikethrough" (click)="applyStyle({ key: 'strikeThrough' })"><i class="fa fa-strikethrough"></i></button>
+        <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Unordered List" (click)="applyStyle({ key: 'insertUnorderedList' })"><i class="fa fa-list-ul"></i></button>
+        <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Ordered List" (click)="applyStyle({ key: 'insertOrderedList' })"><i class="fa fa-list-ol"></i></button>
+        <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Redo" (click)="applyStyle({ key: 'redo' })"><i class="fas fa-redo-alt"></i></button>
+        <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Undo" (click)="applyStyle({ key: 'undo' })"><i class="fa fa-undo"></i></button>
+    </div>
+
+    <!-- Aligment -->
+    <div class="btn-group">
+       <!--  <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Align text left" (click)="applyStyle({ key: 'justifyLeft' })"><i class="fa fa-align-left"></i></button> -->
+    </div>
+    <!-- Media and state -->
+    <div class="btn-group">
+        <button type="button" [disabled]="disabledToolbar" class="btn btn-light" title="Horizontal line" (click)="applyStyle({ key: 'insertHorizontalRule' })">&mdash;</button>
+    </div>
+  </div>
+</div>

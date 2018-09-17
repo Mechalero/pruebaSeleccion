@@ -19,19 +19,20 @@ export class ExamComponent implements OnInit {
   constructor(
     private router: Router,
     private apiService: ApiService
-    ) {   
+  ){
+    this.user = new Users();
   }
 
   ngOnInit() {
-    if(!localStorage.getItem('token')){
+    if(!localStorage.getItem('id')){
       this.router.navigateByUrl("/");
     }else{
-       this.apiService.getUser(localStorage.getItem('id')).subscribe(
+      this.apiService.getUser(localStorage.getItem('id')).subscribe(
         user => {
             this.user = user;
-            console.log(user)
+            this.user.estado = "";
           }, er =>{
-            console.log("error")
+            console.log("error");
           }
         );
     } 

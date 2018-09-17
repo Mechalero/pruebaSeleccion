@@ -25,10 +25,35 @@
           </div>
         </div>
         <div class="form-group">
-          <div class="form-label-group">
-            <input type="text" id="inputEmail" readonly class="form-control" value="{{user.create | date:'medium'}}">
-            <label for="inputEmail">Fecha</label>
-            <!-- <p id="inputEmail">{{user.create}}</p> -->
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="text" id="inputEmail" readonly class="form-control" value="{{user.create | date:'medium'}}">
+                <label for="inputEmail">Fecha creación</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="text" id="inputEmail" readonly class="form-control" value="{{user.upd | date:'medium'}}">
+                <label for="inputEmail">Fecha finalización examen</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="text" id="inputEmail" readonly class="form-control" value="{{suma22}}">
+                <label for="inputEmail">Total Preguntas del 1-22</label>                
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="text" id="inputEmail" readonly class="form-control" value="{{suma30}}">
+                <label for="inputEmail">Total Preguntas del 23-30</label>            
+              </div>
+            </div>
           </div>
         </div>
     </div>
@@ -42,41 +67,39 @@
       <button type="button" class="btn btn-light" (click)="download()"><i class="fas fa-download"></i> Descargar</button>
     </div>
     <div class="table-responsive">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="dataTable" width="50%" cellspacing="0">
         <thead>
           <tr>
-            <th>No.</th>
-            <th>Respuesta</th>
-            <!-- <th>Correcta</th> -->
-            <th>Calificación</th>
-            <th>Calificar</th>               
+            <th width="10%">No.</th>
+            <th width="50%">Respuesta</th>
+            <!-- <th>Val</th> -->
+            <th width="20%">Calificación</th>
+            <th width="20%">Calificar</th>               
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let u of user.preguntas; index as i">
-            <td>{{u.numero}}</td>
-            <td>{{u.respuesta}}</td>
+            <td >{{u.numero}}</td>
+            <td ><div [innerHTML]="u.respuesta"></div></td>
             <!-- <td>{{u.correta}}</td> -->
             <td >
-              <div *ngIf="u.correta != '' || u.nota !='';else elseBlock">
-                <div *ngIf="u.correta == u.respuesta || u.nota == 'good';else eBlock">
-                  <i class="text-success fas fa-check" ></i>
-                </div>
-                <ng-template #eBlock><i class=" text-danger fas fa-times"></i></ng-template>
+              <div *ngIf="u.nota !='';else elseBlock">
+                 <span [ngStyle]="{color:(u.nota == 0)? 'red' : 'black'}">{{u.nota}}</span> 
               </div>
               <ng-template #elseBlock>
                 No calificado
               </ng-template>
             </td>
             <td>
-              <div class="dropdown" *ngIf="u.nota == '' && u.estado == '2' ">
-                <button class="btn btn-secondary dropdown-toggle" href="#" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div *ngIf="!u.estado ">
+                 <button class="btn btn-secondary dropdown-toggle" href="#" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Calificar
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" (click)="addNota('good',i)" ><i class="text-success fas fa-check"></i> Bien</a>
-                  <a class="dropdown-item" (click)="addNota('bad',i)"><i class=" text-danger fas fa-times"></i> Mala</a>
-                </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                  <a class="dropdown-item" (click)="addNota(j+1,i)" *ngFor="let p of noCalificacion(i);index as j">
+                    {{j+1}}
+                  </a>
+                </div>              
               </div>
             </td>
           </tr>

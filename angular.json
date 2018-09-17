@@ -26,14 +26,9 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./src/assets/css/sb-admin.css",
               "./src/assets/css/fontawesome-free/css/all.min.css",
-              /*"./src/assets/css/font-awesome.min.css",
-              "./src/assets/css/font.css",
-              "./src/assets/css/app.css",
-              "./src/assets/css/admin.css",*/
-              // "src/assets/scss/main.scss",
               "src/styles.css"
             ],
-            "scripts": [ 
+            "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
@@ -126,6 +121,46 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-weditor": {
+      "root": "projects/ngx-weditor",
+      "sourceRoot": "projects/ngx-weditor/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-weditor/tsconfig.lib.json",
+            "project": "projects/ngx-weditor/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-weditor/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-weditor/src/test.ts",
+            "tsConfig": "projects/ngx-weditor/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-weditor/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-weditor/tsconfig.lib.json",
+              "projects/ngx-weditor/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

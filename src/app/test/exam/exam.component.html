@@ -81,25 +81,25 @@
 				    <div class="form-check px-5">
 					  <input class="form-check-input" type="radio" name="q3" id="q3a" [(ngModel)]="exam1[2].respuesta" value="a" >
 					  <label class="form-check-label" for="defaultCheck1">
-					    Todos los pares de valores de entrada y las precondiciones
+					    a) Todos los pares de valores de entrada y las precondiciones
 					  </label>
 					</div>
 					<div class="form-check px-5">
 					  <input class="form-check-input" type="radio" name="q3" id="q3b" [(ngModel)]="exam1[2].respuesta" value="b" >
 					  <label class="form-check-label" for="defaultCheck2">
-					    Por lo menos uno de cada valor posible de las entradas y precondiciones
+					    b) Por lo menos uno de cada valor posible de las entradas y precondiciones
 					  </label>
 					</div>
 					<div class="form-check px-5">
 					  <input class="form-check-input" type="radio" name="q3" id="q3c" [(ngModel)]="exam1[2].respuesta" value="c" >
 					  <label class="form-check-label" for="defaultCheck2">
-					    Todas las combinaciones de los valores de entrada y las precondiciones
+					    c) Todas las combinaciones de los valores de entrada y las precondiciones
 					  </label>
 					</div>
 					<div class="form-check px-5">
 					  <input class="form-check-input" type="radio" name="q3" id="q3d" [(ngModel)]="exam1[2].respuesta" value="d" >
 					  <label class="form-check-label" for="defaultCheck2">
-					    las actividades a través de todo el ciclo de vida del software, incluyendo la planificación, preparación y evaluación
+					    d) las actividades a través de todo el ciclo de vida del software, incluyendo la planificación, preparación y evaluación
 					  </label>
 					</div>
 				</div>
@@ -213,19 +213,23 @@
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[7].numero}}. Escriba las estapas del proceso de pruebas</label>
-				    <textarea class="form-control" id="q8" [(ngModel)]="exam1[7].respuesta" rows="5" name="q8"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[7].respuesta" id="q8" name="q8"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" id="q8" [(ngModel)]="exam1[7].respuesta" rows="5" name="q8"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[8].numero}}. Describir las etapas del proceso de pruebas del punto anterior</label>
-				    <textarea class="form-control" name="q9" id="q9" [(ngModel)]="exam1[8].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[8].respuesta" id="q9" name="q9"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q9" id="q9" [(ngModel)]="exam1[8].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[9].numero}}. Escriba 3 tipos de pruebas de Software</label>
-				    <textarea class="form-control" name="q10" id="q10"  [(ngModel)]="exam1[9].respuesta"rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[9].respuesta" id="q10" name="q10"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q10" id="q10"  [(ngModel)]="exam1[9].respuesta"rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[10].numero}}. Describa las pruebas del Software del punto anterior</label>
-				    <textarea class="form-control"  name="q11" id="q11" [(ngModel)]="exam1[10].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[10].respuesta" id="q11" name="q11"></app-ngx-weditor>
+				    <!-- <textarea class="form-control"  name="q11" id="q11" [(ngModel)]="exam1[10].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[11].numero}}. ¿Cuál de las siguientes sentencias crean una tabla?</label>
@@ -256,78 +260,96 @@
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[12].numero}}. Escribir una sentencia SQL que cree la base de datos "COLEGIO"</label>
-				    <textarea class="form-control" name="q13" id="q13" [(ngModel)]="exam1[12].respuesta" rows="3"></textarea>
+				    <!-- <app-ngx-weditor [(ngModel)]="exam1[12].respuesta" id="q13" name="q13"></app-ngx-weditor> -->
+				    <textarea class="form-control" name="q13" id="q13" [(ngModel)]="exam1[12].respuesta" rows="2"></textarea>
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[13].numero}}. Escribir una sentencia SQL que cree una tabla "ALUMNOS" en la base de datos anterior, con los campos (NOMBRE, APELLIDO, CEDULA, TELEFONO)</label>
-				    <textarea class="form-control" name="q14" id="q14" [(ngModel)]="exam1[13].respuesta" rows="3"></textarea>
+				    <!-- <app-ngx-weditor [(ngModel)]="exam1[13].respuesta" id="q14" name="q14"></app-ngx-weditor> -->
+				    <textarea class="form-control" name="q14" id="q14" [(ngModel)]="exam1[13].respuesta" rows="2"></textarea>
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[14].numero}}. Escribir una sentencia SQL para ingresar la información de 5 alumnos en la tabla anterior</label>
-				    <textarea class="form-control" name="q15" id="q15" [(ngModel)]="exam1[14].respuesta" rows="3"></textarea>
+				    <!-- <app-ngx-weditor [(ngModel)]="exam1[14].respuesta" id="q15" name="q15"></app-ngx-weditor> -->
+				    <textarea class="form-control" name="q15" id="q15" [(ngModel)]="exam1[14].respuesta" rows="5"></textarea>
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[15].numero}}. Escribir una sentencia que elimine la tabla "ALUMNOS"</label>
-				    <textarea class="form-control" name="q16" id="q16" [(ngModel)]="exam1[15].respuesta" rows="3"></textarea>
+				    <!-- <app-ngx-weditor [(ngModel)]="exam1[15].respuesta" id="q16" name="q16"></app-ngx-weditor> -->
+				    <textarea class="form-control" name="q16" id="q16" [(ngModel)]="exam1[15].respuesta" rows="1"></textarea>
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[16].numero}}. Escribir una sentencia que elimine la base de datos "COLEGIO"</label>
-				    <textarea class="form-control" name="q17" id="q17" [(ngModel)]="exam1[16].respuesta" rows="3"></textarea>
+				    <!-- <app-ngx-weditor [(ngModel)]="exam1[16].respuesta" id="q17" name="q17"></app-ngx-weditor> -->
+				    <textarea class="form-control" name="q17" id="q17" [(ngModel)]="exam1[16].respuesta" rows="1"></textarea>
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[17].numero}}. Se tiene el siguiente formulario
 				    	<img  style="width: 100%;padding: 10px;" src="assets/img/18.png">
 				    	Realizar una estimación de tiempos de las etapas más importantes para el proceso de pruebas sobre este formulario
 				    </label>
-				    <textarea class="form-control" name="q18"id="q18" [(ngModel)]="exam1[17].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[17].respuesta" id="q18" name="q18"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q18"id="q18" [(ngModel)]="exam1[17].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[18].numero}}. Realizar 5 casos de pruebas referentes al formulario anterior</label>
-				    <textarea class="form-control" name="q19" id="q19" [(ngModel)]="exam1[18].respuesta" rows="3"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[18].respuesta" id="q19" name="q19"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q19" id="q19" [(ngModel)]="exam1[18].respuesta" rows="3"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[19].numero}}. Realizar un informe parcial para el cliente sobre el resultado de los 5 casos de prueba anteriormente creados</label>
-				    <textarea class="form-control" name="q20" id="q20" [(ngModel)]="exam1[19].respuesta"  rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[19].respuesta" id="q20" name="q20"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q20" id="q20" [(ngModel)]="exam1[19].respuesta"  rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[20].numero}}. ¿Qué son las pruebas no funcionales?</label>
-				    <textarea class="form-control" name="q21" id="q21" [(ngModel)]="exam1[20].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[20].respuesta" id="q21" name="q21"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q21" id="q21" [(ngModel)]="exam1[20].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[21].numero}}. ¿Qué aspectos se analizan en las pruebas no funcionales?</label>
-				    <textarea class="form-control" name="q22" id="q22" [(ngModel)]="exam1[21].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[21].respuesta" id="q22" name="q22"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q22" id="q22" [(ngModel)]="exam1[21].respuesta" rows="5"></textarea> -->
 				</div> 
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[22].numero}}. Para usted ¿Qué significa metodología de pruebas?</label>
-				    <textarea class="form-control" name="q23" id="q23" [(ngModel)]="exam1[22].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[22].respuesta" id="q23" name="q23"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q23" id="q23" [(ngModel)]="exam1[22].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[23].numero}}. Describa las fases de metodología de pruebas</label>
-				    <textarea class="form-control" name="q24" id="q24" [(ngModel)]="exam1[23].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[23].respuesta" id="q24" name="q24"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q24" id="q24" [(ngModel)]="exam1[23].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[24].numero}}. ¿Por qué cree que es necesaria la metodología de pruebas?</label>
-				    <textarea class="form-control" name="q25" id="q25" [(ngModel)]="exam1[24].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[24].respuesta" id="q25" name="q25"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q25" id="q25" [(ngModel)]="exam1[24].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[25].numero}}. ¿Qué es calidad?</label>
-				    <textarea class="form-control" name="q26" id="q26" [(ngModel)]="exam1[25].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[25].respuesta" id="q26" name="q26"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q26" id="q26" [(ngModel)]="exam1[25].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[26].numero}}. ¿Qué es aseguramiento de la calidad?</label>
-				    <textarea class="form-control" name="q27" id="q27" [(ngModel)]="exam1[26].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[26].respuesta" id="q27" name="q27"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q27" id="q27" [(ngModel)]="exam1[26].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[27].numero}}. ¿Qué técnicas de pruebas conoce?</label>
-				    <textarea class="form-control" name="q28" id="q28" [(ngModel)]="exam1[27].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[27].respuesta" id="q28" name="q28"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q28" id="q28" [(ngModel)]="exam1[27].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[28].numero}}. ¿Qué aspectos debe tener en cuenta en una esimación de tiempos?</label>
-				    <textarea class="form-control" name="q29" id="q29" [(ngModel)]="exam1[28].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[28].respuesta" id="q29" name="q29"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q29" id="q29" [(ngModel)]="exam1[28].respuesta" rows="5"></textarea> -->
 				</div>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">{{exam1[29].numero}}. ¿Qué es una estrategia de pruebas? y ¿Cuál es la diferencia con un plan de pruebas?</label>
-				    <textarea class="form-control" name="q30" id="q30" [(ngModel)]="exam1[29].respuesta" rows="5"></textarea>
+				    <app-ngx-weditor [(ngModel)]="exam1[29].respuesta" id="q30" name="q30"></app-ngx-weditor>
+				    <!-- <textarea class="form-control" name="q30" id="q30" [(ngModel)]="exam1[29].respuesta" rows="5"></textarea> -->
 				</div>
 			 	<button class="btn btn-primary" href="#" data-toggle="modal" data-target="#confirmation">ENVIAR</button>
 			  </form>

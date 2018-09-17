@@ -7,7 +7,7 @@ declare class Message{
 	status:Boolean;
 	msj:String;
 }
-// const routes: Message = { path: 'heroes', component: HeroesComponent };
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -34,7 +34,6 @@ export class TestComponent implements OnInit {
   		this.apiService.login({ documento: this.documento }).subscribe(
   			d => {
   				let data:any = d;
-  				localStorage.setItem('token', data.token);
         		localStorage.setItem('id', data.id);
         		this.router.navigateByUrl("/exam");        	
       		}, er =>{

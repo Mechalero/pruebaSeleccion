@@ -39,6 +39,10 @@ export class NavComponent implements OnInit {
       return (this.location.path() == '/exam') ? true : false;
 
     }
+    logout(){
+      localStorage.clear();
+      this.router.navigate(['rrhh-admin/login']);
+    }
     /*sidebarOpen() {
         const toggleButton = this.toggleButton;
         const body = document.getElementsByTagName('body')[0];
