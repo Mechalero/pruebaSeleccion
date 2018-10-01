@@ -9,6 +9,8 @@ export class Users {
 	_id: String;
 	nombres: String;
 	apellidos: String;
+	upd:String;
+	create:String;
 	tipoDoc:String;
 	documento:String;
 	estado:String;
