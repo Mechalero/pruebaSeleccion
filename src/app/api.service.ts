@@ -9,8 +9,8 @@ import {Answer} from "./answer";
   providedIn: 'root'
 })
 export class ApiService {
-  // private apiUrl = '/api-v1/';
-  private apiUrl = 'http://localhost:5000/api-v1/';
+  private apiUrl = '/api-v1/';
+  // private apiUrl = 'http://localhost:5000/api-v1/';
   private headers:HttpHeaders;
 
   	constructor(
